@@ -15,7 +15,8 @@
   "scripts": {
     "dev": "rollup -c ./build/dev.js -w",
     "fix": "eslint --fix ./src/slim/**/*.js",
-    "test": "jest --notify --coverage"
+    "test": "jest --notify --coverage",
+    "cover": "codecov"
   },
   "repository": {
     "type": "git",
