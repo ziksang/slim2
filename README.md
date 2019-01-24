@@ -1,3 +1,3 @@
 # slim
 
-这是一个学习的方式！邵JB
+![codecov](https://codecov.io/gh/ziksang/slim/branch/master/graph/badge.svg)
