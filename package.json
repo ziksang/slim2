@@ -3,8 +3,19 @@
   "version": "0.0.1",
   "description": "state manager with proxy",
   "main": "index.js",
+  "jest": {
+    "testURL": "http://localhost/",
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    }
+  },
   "scripts": {
-    "dev": "rollup -c ./build/dev.js -w"
+    "dev": "rollup -c ./build/dev.js -w",
+    "fix": "eslint --fix ./src/slim/**/*.js",
+    "test": "jest --notify --coverage"
   },
   "repository": {
     "type": "git",
@@ -22,7 +33,12 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0",
+    "regenerator-runtime": "^0.13.1",
     "rollup": "^1.1.2",
-    "rollup-plugin-babel": "^4.3.2"
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-eslint": "^5.0.0"
   }
 }

@@ -1,13 +1,6 @@
-const a = 10
-const b = a + 10
+import { createStore } from './core/createStore'
 
-let mm = new Proxy({
-  name: 1
-}, {
-  get (target, key) {
-    return target[key] 
-  }
-})
+export {
+  createStore
+}
 
-console.log(mm.name)
-export default b
