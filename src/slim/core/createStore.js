@@ -9,9 +9,9 @@ const cloneObj = p => JSON.parse(JSON.stringify(p))
 const msgHelper = {
   typeError: (type) => `type of state expect to [Object] but got [${type}]`,
   shouldBe: (name, expect, got) => `${name} should be type of [${expect}] but got [${got}]`,
-  cantCall: (key) => `You may not call ${key} while the reducer is executing. ` +
-    'The reducer has already received the state as an argument. ' +
-    'Pass it down from the top reducer instead of reading it from the store.',
+  // cantCall: (key) => `You may not call ${key} while the reducer is executing. ` +
+  //   'The reducer has already received the state as an argument. ' +
+  //   'Pass it down from the top reducer instead of reading it from the store.',
   cantAssign: () => 'You may not be able to assign values ​​directly to state. ' +
     'Please return a new state for reducing or edit with state in reducer.'
 };
@@ -92,7 +92,7 @@ const observeObject = (object, mode) => {
     const arrayProxyHandler = {
       ...objectProxyHandler,
       set (target, property, value) {
-        throwIf(!isDispatching, msgHelper.cantAssign())
+        // throwIf(!isDispatching, msgHelper.cantAssign())
         return Reflect.set(target, property, _createProxy(cloneObj(value)))
       }
     };
